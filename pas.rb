@@ -5,26 +5,27 @@ symb = ["!", "@", "#", "$", "%", "^", "&", "*"]
 num = rand(100)
 
 puts "enter the number of characters for the password: "
-length = gets.to_i
+length = 5
 pas2 = []
 i = 0
 while i < length
-	if i.zero?
-		pas2 << num
-	elsif i == length - 1
-		pas2 << symb.sample
-	elsif i != 0
-		  if rand(3)==1
-			  pas2 << soglasnie.sample
-				else  pas2 << soglasnie.sample.downcase
-		  end
+  if i.zero?
+    pas2 << num
+  elsif i == length - 1
+    pas2 << symb.sample
+  elsif i != 0
+      if rand(2)==1
+        pas2 << soglasnie.sample
+        else  pas2 << soglasnie.sample.downcase
+      end
 
-		  if rand(3)==1
-			  pas2 << glasnie.sample
-		    else  pas2 << glasnie.sample.downcase
-		  end
-	end
-	i += 1
+      if rand(2)==1
+        pas2 << glasnie.sample
+        else  pas2 << glasnie.sample.downcase
+      end
+  end
+  i += 1
 end
 
 print "your pass: #{pas2.join}"
+

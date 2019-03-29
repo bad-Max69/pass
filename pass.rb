@@ -20,26 +20,29 @@ class Hpass
     glasnie = %w[A E I O U]
     soglasnie = %w[B C D F G H J K L M N P Q R S T V W X Y Z]
     symb = %w[! @ # $ % ^ & *]
-    num = rand(100)
+    num = rand(9)
+
     pas2 = []
     i = 1
-    while i < length
-
-      if i == 1
+    while i < length + 1
+      case i
+      when 1
         pas2 << num
-      elsif i == length - 1
+      when length
         pas2 << symb.sample
-      elsif i != 0
-        pas2 << if rand(2) == 1
+      else if i % 2 == 0
+        pas2 << if rand(3) == 1
                   soglasnie.sample
                 else
                   soglasnie.sample.downcase
                 end
-        pas2 << if rand(2) == 1
+           else
+        pas2 << if rand(3) == 1
                   glasnie.sample
                 else
                   glasnie.sample.downcase
                 end
+           end
       end
       i += 1
     end

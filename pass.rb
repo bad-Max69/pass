@@ -53,6 +53,5 @@ end
 p 'Enter the number of characters for the password: '
 x = gets.to_i
 
-a = Hpass.new(x) #объект класса
+Hpass.new(x) #объект класса
 
-p a.to_s

@@ -9,7 +9,7 @@ i = 6
 puts "Easy pass = #{hrdpas(i)}"
 
 # easyread pass
-class Hpass
+class ERpass
   def initialize(length)
     v = %w[A E I O U]
     c = %w[B C D F G H J K L M N P Q R S T V W X Y Z]
@@ -25,7 +25,7 @@ class Hpass
               when length
                 symb.sample
               else if i.even?
-	                   rand(2) == 1 ? v.sample : v.sample.downcase
+                     rand(2) == 1 ? v.sample : v.sample.downcase
                    else
                      rand(2) == 1 ? c.sample : c.sample.downcase
                    end
@@ -39,5 +39,5 @@ end
 p 'Enter the number of characters for the password: '
 x = gets.to_i
 
-Hpass.new(x)
+ERpass.new(x)
 
